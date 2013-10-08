@@ -1,0 +1,41 @@
+---
+abstract: 'Plack Middleware to integrate with Mozilla Persona, cross-browser login system for the Web.'
+author:
+  - 'J. Bolila <joao@bolila.com>'
+build_requires:
+  Dancer2: 0.10
+  ExtUtils::MakeMaker: 6.78
+  File::Spec::Functions: 3.40
+  List::Util: 1.32
+  Mojo::Base: 0
+  Mojo::Template: 0
+  Mojolicious::Commands: 0
+  Plack::Builder: 0
+  Test::More: 0.98
+  lib: 0.63
+  strict: 1.07
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132661'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Plack-Middleware-Auth-BrowserID
+requires:
+  Carp: 1.32
+  JSON: 2.59
+  LWP::UserAgent: 6.05
+  Mozilla::CA: 20130114
+  Plack::Middleware: 0
+  Plack::Response: 1.0029
+  Plack::Session: 0.20
+  Plack::Util::Accessor: 0
+  parent: 0.228
+  perl: 5.012
+  warnings: 1.18
+resources:
+  bugtracker: https://github.com/jbolila/Plack-Middleware-Auth-BrowserID/issues
+  repository: https://github.com/jbolila/Plack-Middleware-Auth-BrowserID
+version: 0.0.1_01
