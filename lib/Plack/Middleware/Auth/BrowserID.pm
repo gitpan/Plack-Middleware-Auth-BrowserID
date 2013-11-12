@@ -86,11 +86,10 @@ Plack::Middleware::Auth::BrowserID - Plack Middleware to integrate with Mozilla 
 
 =head1 VERSION
 
-version 0.0.1_02
+version 0.0.1_03
 
 =head1 SYNOPSIS
 
-<code>
     use Plack::Builder;
 
     builder {
@@ -102,7 +101,6 @@ version 0.0.1_02
 
         mount '/'      => $app;
     }
-</code>
 
 =head1 DESCRIPTION
 
@@ -112,8 +110,13 @@ Mozilla Persona is a secure solutions, to identify (login) users based on email 
 
 Some code is needed in the client side, please see the example on tests and read the Mozilla Persona info on MDN.
 
+See the functional example on the example folder.
+
+  plackup -s Starman -r -p 8082 -E development -I lib example/app.psgi
+
 =head1 SEE ALSO
 
+L<Plack::Middleware::Session>
 L<LWP::Protocol::https>
 L<Net::BrowserID::Verify>
 

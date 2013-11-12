@@ -18,7 +18,7 @@ _-- [Persona makes signing in easy for Gmail users](http://identity.mozilla.com/
 Is a functional example with three concept apps to test.
 
 ```shell
-plackup -s Starman -r -p 8082 -E development -I lib t/app.psgi
+plackup -s Starman -r -p 8082 -E development -I lib example/app.psgi
 ```
 
 All of then use the `Plack::Session` and are one [Dancer2](https://github.com/PerlDancer/Dancer2), one [Mojolicous](https://github.com/kraih/mojo) and one [Plack](https://github.com/plack/Plack), all of them sharing the same `app.psgi` and `session`.

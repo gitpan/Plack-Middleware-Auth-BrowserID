@@ -15,7 +15,6 @@ my @modules = qw(
     CPAN::Meta
   CPAN::Meta::Requirements
   Carp
-  Dancer2
   ExtUtils::MakeMaker
   File::Spec::Functions
   HTTP::Request::Common
@@ -23,9 +22,6 @@ my @modules = qw(
   LWP::Protocol::https
   LWP::UserAgent
   List::Util
-  Mojo::Base
-  Mojo::Template
-  Mojolicious::Commands
   Mozilla::CA
   Plack::Builder
   Plack::Middleware
@@ -34,7 +30,6 @@ my @modules = qw(
   Plack::Test
   Plack::Util::Accessor
   Test::More
-  lib
   parent
   perl
   strict

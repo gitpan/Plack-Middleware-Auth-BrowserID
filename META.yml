@@ -3,18 +3,13 @@ abstract: 'Plack Middleware to integrate with Mozilla Persona (Auth by email)'
 author:
   - 'J. Bolila <bolila@cpan.org>'
 build_requires:
-  Dancer2: 0.10
   ExtUtils::MakeMaker: 0
   File::Spec::Functions: 0
   HTTP::Request::Common: 6.04
   List::Util: 0
-  Mojo::Base: 0
-  Mojo::Template: 0
-  Mojolicious::Commands: 0
   Plack::Builder: 0
   Plack::Test: 0
   Test::More: 0
-  lib: 0
   strict: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
@@ -41,4 +36,4 @@ requires:
 resources:
   bugtracker: https://github.com/jbolila/Plack-Middleware-Auth-BrowserID/issues
   repository: https://github.com/jbolila/Plack-Middleware-Auth-BrowserID
-version: 0.0.1_02
+version: 0.0.1_03
