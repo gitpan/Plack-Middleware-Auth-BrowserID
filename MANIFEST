@@ -5,11 +5,13 @@ META.yml
 Makefile.PL
 README
 README.md
+Vagrantfile
 cpanfile
 lib/Plack/Middleware/Auth/BrowserID.pm
 lib/Plack/Middleware/Auth/BrowserID.pm.bak
 t/00-report-prereqs.t
 t/00_compile.t
+t/11_assertion.t
 t/app.psgi
 t/author-critic.t
 t/lib/MyApp.pm

@@ -9,6 +9,7 @@ use Plack::Util::Accessor qw( audience );
 use Plack::Response;
 use Plack::Session;
 
+use LWP::Protocol::https;
 use LWP::UserAgent;
 use Mozilla::CA;
 use JSON;
@@ -71,33 +72,37 @@ sub call {
 
 1;
 
-#ABSTRACT: Plack Middleware to integrate with Mozilla Persona, cross-browser login system for the Web.
+#ABSTRACT: Plack Middleware to integrate with Mozilla Persona (Auth by email)
 
 __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
-Plack::Middleware::Auth::BrowserID - Plack Middleware to integrate with Mozilla Persona, cross-browser login system for the Web.
+Plack::Middleware::Auth::BrowserID - Plack Middleware to integrate with Mozilla Persona (Auth by email)
 
 =head1 VERSION
 
-version 0.0.1_01
+version 0.0.1_02
 
 =head1 SYNOPSIS
 
-use Plack::Builder;
+<code>
+    use Plack::Builder;
 
-builder {
-    enable 'Session', store => 'File';
+    builder {
+        enable 'Session', store => 'File';
 
-    mount '/auth' => builder {
-        enable 'Auth::BrowserID', audience => 'http://localhost:8082/';
-    };
+        mount '/auth' => builder {
+            enable 'Auth::BrowserID', audience => 'http://localhost:8082/';
+        };
 
-    mount '/'      => $app;
-}
+        mount '/'      => $app;
+    }
+</code>
 
 =head1 DESCRIPTION
 
@@ -107,9 +112,14 @@ Mozilla Persona is a secure solutions, to identify (login) users based on email 
 
 Some code is needed in the client side, please see the example on tests and read the Mozilla Persona info on MDN.
 
+=head1 SEE ALSO
+
+L<LWP::Protocol::https>
+L<Net::BrowserID::Verify>
+
 =head1 AUTHOR
 
-J. Bolila <joao@bolila.com>
+J. Bolila <bolila@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
