@@ -86,7 +86,7 @@ Plack::Middleware::Auth::BrowserID - Plack Middleware to integrate with Mozilla 
 
 =head1 VERSION
 
-version 0.0.2
+version 0.0.3
 
 =head1 SYNOPSIS
 
