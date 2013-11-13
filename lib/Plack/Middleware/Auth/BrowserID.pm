@@ -1,7 +1,11 @@
 package Plack::Middleware::Auth::BrowserID;
 
-use 5.012;
+BEGIN {
+    $Plack::Middleware::Auth::BrowserID::AUTHORITY = 'cpan:BOLILA';
+}
+use strict;
 use warnings;
+
 use Carp 'croak';
 
 use parent qw(Plack::Middleware);
@@ -11,7 +15,6 @@ use Plack::Session;
 
 use LWP::Protocol::https;
 use LWP::UserAgent;
-use Mozilla::CA;
 use JSON;
 
 
@@ -37,10 +40,7 @@ sub call {
         $persona_req->header( 'Content-Type' => 'application/json' );
         $persona_req->content( to_json( $json, { utf8 => 1 } ) );
 
-        my $ua = LWP::UserAgent->new(
-            ssl_opts    => { verify_hostname => 1 },
-            SSL_ca_file => Mozilla::CA::SSL_ca_file()
-        );
+        my $ua = LWP::UserAgent->new( ssl_opts => { verify_hostname => 1 } );
 
         my $res      = $ua->request($persona_req);
         my $res_data = from_json( $res->decoded_content );
@@ -86,7 +86,7 @@ Plack::Middleware::Auth::BrowserID - Plack Middleware to integrate with Mozilla 
 
 =head1 VERSION
 
-version 0.0.1_03
+version 0.0.1_04
 
 =head1 SYNOPSIS
 
@@ -122,7 +122,7 @@ L<Net::BrowserID::Verify>
 
 =head1 AUTHOR
 
-J. Bolila <bolila@cpan.org>
+João Bolila <bolila@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

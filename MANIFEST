@@ -17,7 +17,6 @@ lib/Plack/Middleware/Auth/BrowserID.pm.bak
 t/00-report-prereqs.t
 t/00_compile.t
 t/11_assertion.t
-t/author-critic.t
 t/release-distmeta.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t

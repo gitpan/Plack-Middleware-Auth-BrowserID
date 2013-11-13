@@ -14,26 +14,18 @@ use List::Util qw/max/;
 my @modules = qw(
     CPAN::Meta
   CPAN::Meta::Requirements
-  Carp
   ExtUtils::MakeMaker
-  File::Spec::Functions
   HTTP::Request::Common
   JSON
   LWP::Protocol::https
   LWP::UserAgent
-  List::Util
   Mozilla::CA
-  Plack::Builder
-  Plack::Middleware
+  Plack::Middleware::Session
   Plack::Response
-  Plack::Session
   Plack::Test
   Plack::Util::Accessor
+  Test::Compile
   Test::More
-  parent
-  perl
-  strict
-  warnings
 );
 
 my %exclude = map { ; $_ => 1 } qw(

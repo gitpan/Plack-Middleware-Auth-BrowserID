@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use 5.012;
+
 
 use ExtUtils::MakeMaker 6.30;
 
@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Plack Middleware to integrate with Mozilla Persona (Auth by email)",
-  "AUTHOR" => "J. Bolila <bolila\@cpan.org>",
+  "AUTHOR" => "Jo\x{e3}o Bolila <bolila\@cpan.org>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
@@ -20,29 +20,21 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Plack::Middleware::Auth::BrowserID",
   "PREREQ_PM" => {
-    "Carp" => 0,
+    "HTTP::Request::Common" => "6.04",
     "JSON" => "2.90",
     "LWP::Protocol::https" => "6.04",
     "LWP::UserAgent" => "6.05",
     "Mozilla::CA" => 20130114,
-    "Plack::Middleware" => 0,
+    "Plack::Middleware::Session" => "0.21",
     "Plack::Response" => "1.0029",
-    "Plack::Session" => "0.21",
-    "Plack::Util::Accessor" => 0,
-    "parent" => 0,
-    "warnings" => 0
+    "Plack::Util::Accessor" => 0
   },
   "TEST_REQUIRES" => {
-    "ExtUtils::MakeMaker" => 0,
-    "File::Spec::Functions" => 0,
-    "HTTP::Request::Common" => "6.04",
-    "List::Util" => 0,
-    "Plack::Builder" => 0,
     "Plack::Test" => 0,
-    "Test::More" => 0,
-    "strict" => 0
+    "Test::Compile" => 0,
+    "Test::More" => "0.98"
   },
-  "VERSION" => "0.0.1_03",
+  "VERSION" => "0.0.1_04",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -50,25 +42,17 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "Carp" => 0,
-  "ExtUtils::MakeMaker" => 0,
-  "File::Spec::Functions" => 0,
   "HTTP::Request::Common" => "6.04",
   "JSON" => "2.90",
   "LWP::Protocol::https" => "6.04",
   "LWP::UserAgent" => "6.05",
-  "List::Util" => 0,
   "Mozilla::CA" => 20130114,
-  "Plack::Builder" => 0,
-  "Plack::Middleware" => 0,
+  "Plack::Middleware::Session" => "0.21",
   "Plack::Response" => "1.0029",
-  "Plack::Session" => "0.21",
   "Plack::Test" => 0,
   "Plack::Util::Accessor" => 0,
-  "Test::More" => 0,
-  "parent" => 0,
-  "strict" => 0,
-  "warnings" => 0
+  "Test::Compile" => 0,
+  "Test::More" => "0.98"
 );
 
 

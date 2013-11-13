@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution Plack-Middleware-Auth-BrowserID,
-version 0.0.1_03:
+version 0.0.1_04:
 
   Plack Middleware to integrate with Mozilla Persona (Auth by email)
 
