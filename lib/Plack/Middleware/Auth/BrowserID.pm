@@ -86,11 +86,9 @@ Plack::Middleware::Auth::BrowserID - Plack Middleware to integrate with Mozilla 
 
 =head1 VERSION
 
-version 0.0.1_04
+version 0.0.2
 
 =head1 SYNOPSIS
-
-    use Plack::Builder;
 
     builder {
         enable 'Session', store => 'File';
@@ -99,8 +97,8 @@ version 0.0.1_04
             enable 'Auth::BrowserID', audience => 'http://localhost:8082/';
         };
 
-        mount '/'      => $app;
-    }
+        mount '/'     => $app;
+    };
 
 =head1 DESCRIPTION
 

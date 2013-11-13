@@ -27,5 +27,5 @@ requires:
 resources:
   bugtracker: https://github.com/jbolila/Plack-Middleware-Auth-BrowserID/issues
   repository: https://github.com/jbolila/Plack-Middleware-Auth-BrowserID
-version: 0.0.1_04
+version: 0.0.2
 x_authority: cpan:BOLILA
