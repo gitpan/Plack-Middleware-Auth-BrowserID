@@ -5,7 +5,6 @@ META.yml
 Makefile.PL
 README
 README.md
-cpanfile
 example/app.psgi
 example/lib/MyApp.pm
 example/lib/MyApp/Bar.pm

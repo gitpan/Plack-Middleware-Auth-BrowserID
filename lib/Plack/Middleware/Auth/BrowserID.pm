@@ -86,9 +86,16 @@ Plack::Middleware::Auth::BrowserID - Plack Middleware to integrate with Mozilla 
 
 =head1 VERSION
 
-version 0.0.3
+version 0.0.4
 
 =head1 SYNOPSIS
+
+    #.. on PSGI file
+
+    use Plack::Builder;
+    use Plack::Session;
+
+    ##..
 
     builder {
         enable 'Session', store => 'File';
@@ -102,13 +109,59 @@ version 0.0.3
 
 =head1 DESCRIPTION
 
-Mozilla Persona is a secure solutions, to identify (login) users based on email address.
+Mozilla Persona is a secure solutions, to identify users based on email address.
 
 "Simple, privacy-sensitive single sign-in: let your users sign into your website with their email address, and free yourself from password management."
 
-Some code is needed in the client side, please see the example on tests and read the Mozilla Persona info on MDN.
+Some Javascript code is needed in the client side. First include the dependencies:
 
-See the functional example on the example folder.
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.3.1/jquery.cookie.min.js"></script>
+    <script src="https://login.persona.org/include.js"></script>"
+
+Setup the watch with email and url's for login and logout (as defined in the PSGI "mount '/auth'"):
+
+    email = $.cookie('email') || null;
+
+    navigator.id.watch({
+      loggedInUser: email,
+      onlogin: function(assertion) {
+        return $.post('/auth/signin', {
+          assertion: assertion
+        }, function(data) {
+          return window.location.reload();
+        });
+      },
+      onlogout: function() {
+        return window.location = '/auth/signout';
+      }
+    });
+
+And map the events in the DOM with the watch from Mozilla:
+
+    var signinLink = document.getElementById('signin');
+    if (signinLink) {
+      signinLink.onclick = function() { navigator.id.request(); };
+    }
+
+    var signoutLink = document.getElementById('signout');
+    if (signoutLink) {
+      signoutLink.onclick = function() { navigator.id.logout(); };
+    }
+
+Please look for the example and read the L<Mozilla Persona|https://developer.mozilla.org/en-US/Persona> info on MDN.
+
+In the web application get the L<Plack::Session> (example):
+
+    use Dancer2;
+    use Plack::Session;
+
+    get '/' => sub {
+        my $session = Plack::Session->new( shift->env );
+        'Hi! do you wanna dance? ' . $session->get('email');
+    };
+
+See the functional example on the examples folder.
 
   plackup -s Starman -r -p 8082 -E development -I lib example/app.psgi
 
