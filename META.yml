@@ -17,7 +17,7 @@ meta-spec:
 name: Plack-Middleware-Auth-BrowserID
 no_index:
   directory:
-    - example
+    - examples
 requires:
   HTTP::Request::Common: 6.04
   JSON: 2.90
@@ -30,5 +30,5 @@ requires:
 resources:
   bugtracker: https://github.com/jbolila/Plack-Middleware-Auth-BrowserID/issues
   repository: https://github.com/jbolila/Plack-Middleware-Auth-BrowserID
-version: 0.0.5
+version: 0.0.6
 x_authority: cpan:BOLILA
