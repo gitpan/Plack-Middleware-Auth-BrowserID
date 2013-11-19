@@ -24,11 +24,12 @@ requires:
   LWP::Protocol::https: 6.04
   LWP::UserAgent: 6.05
   Mozilla::CA: 20130114
+  Net::Ping: 2.36
   Plack::Middleware::Session: 0.21
   Plack::Response: 1.0029
   Plack::Util::Accessor: 0
 resources:
   bugtracker: https://github.com/jbolila/Plack-Middleware-Auth-BrowserID/issues
   repository: https://github.com/jbolila/Plack-Middleware-Auth-BrowserID
-version: 0.0.6
+version: 0.0.7
 x_authority: cpan:BOLILA

@@ -25,6 +25,7 @@ my %WriteMakefileArgs = (
     "LWP::Protocol::https" => "6.04",
     "LWP::UserAgent" => "6.05",
     "Mozilla::CA" => 20130114,
+    "Net::Ping" => "2.36",
     "Plack::Middleware::Session" => "0.21",
     "Plack::Response" => "1.0029",
     "Plack::Util::Accessor" => 0
@@ -34,7 +35,7 @@ my %WriteMakefileArgs = (
     "Test::Compile" => 0,
     "Test::More" => "0.98"
   },
-  "VERSION" => "0.0.6",
+  "VERSION" => "0.0.7",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -47,6 +48,7 @@ my %FallbackPrereqs = (
   "LWP::Protocol::https" => "6.04",
   "LWP::UserAgent" => "6.05",
   "Mozilla::CA" => 20130114,
+  "Net::Ping" => "2.36",
   "Plack::Middleware::Session" => "0.21",
   "Plack::Response" => "1.0029",
   "Plack::Test" => 0,

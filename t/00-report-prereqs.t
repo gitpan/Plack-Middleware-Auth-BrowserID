@@ -20,6 +20,7 @@ my @modules = qw(
   LWP::Protocol::https
   LWP::UserAgent
   Mozilla::CA
+  Net::Ping
   Plack::Middleware::Session
   Plack::Response
   Plack::Test
